@@ -5,7 +5,7 @@ function bootstrapSpeechRecognition() {
 	reset();
 	recognition.onend = reset;
 	recognition.onresult = function(event) {
-		for (var i = 0; i < event.results.length; ++i) {
+		for (var i = 0; i < event.results.length; i++) {
 			if (event.results[i].isFinal === true) {
 				textarea.value += event.results[i][0].transcript;
 			}

@@ -3,8 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Web Speech API</title>
-	<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-	<link rel="styleshee" href="http://necolas.github.io/normalize.css/3.0.2/normalize.css">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/3.0.2/normalize.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 	<script src="js/webaudioapi.js"></script>
 	<script>
@@ -15,9 +15,10 @@
 
 			$('#submit').click(function() {
 				$.ajax({
-					url : '/SnapSenseWS/rs/processfeedback/savespeech',
-					dataType : 'json',
+					url : 'http://snapsensews-4wsnptuqbj.elasticbeanstalk.com/rs/RetrieveCustomerFeedback',
+					dataType : 'jsonp',
 					type : 'POST',
+					crossDomain: 'true',
 					data : textarea.value,
 					contentType : 'application/json',
 					success : function(data) {
